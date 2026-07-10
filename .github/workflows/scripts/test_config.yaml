@@ -17,6 +17,8 @@
 #     <module>/a2_2/       -> A2 NPU x2
 #     <module>/a3_2/       -> A3 NPU x2
 #     <module>/a3_4/       -> A3 NPU x4
+#     <module>/a5/         -> A5 NPU x1
+#     <module>/a5_2/       -> A5 NPU x2
 #     <module>/310p/       -> 310P NPU
 #   E2E (tests/e2e/):
 #     pull_request/{one_card,two_card,four_card}/  -> matched by card count
@@ -798,6 +800,10 @@ runner_mapping:
     default: a3_x2
   tests/ut/.+/a2:
     default: a2_x1
+    default: a5_x1
+    310p: 310p_x1
+  tests/ut/.+/a5:
+    default: a5_x1
 
 # === Partition Configuration ===
 # Controls how tests are split across parallel runners of the same type.
@@ -811,6 +817,7 @@ partition:
   a3_x2: 3
   a3_x4: 3
   cpu_x0: 1
+  a5_x1: 5
 
 
 
